@@ -1,0 +1,349 @@
+/* =====================================================
+   Guía Visual de Flexbox - Estilos
+   ===================================================== */
+
+:root {
+    --fondo: #FAFAF7;
+    --superficie: #FFFFFF;
+    --tinta: #0A0A0A;
+    --tinta-suave: #555555;
+    --borde: #E8E5DE;
+    --acento: #FF4D2E;
+    --acento-suave: #FFE9E3;
+    --azul: #2563EB;
+    --mono: 'JetBrains Mono', monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--fondo);
+    color: var(--tinta);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ============== CABECERA ============== */
+.cabecera {
+    padding: 6rem 2rem 4rem;
+    text-align: center;
+    border-bottom: 1px solid var(--borde);
+    position: relative;
+    overflow: hidden;
+}
+
+.cabecera::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+        linear-gradient(var(--borde) 1px, transparent 1px),
+        linear-gradient(90deg, var(--borde) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.4;
+    mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
+}
+
+.cabecera > * {
+    position: relative;
+    z-index: 1;
+}
+
+.kicker {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: var(--acento);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    padding: 0.4rem 0.8rem;
+    background-color: var(--acento-suave);
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.cabecera h1 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: clamp(2.75rem, 7vw, 5.5rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    margin-bottom: 1.5rem;
+}
+
+.resaltado {
+    color: var(--acento);
+    font-style: italic;
+    font-weight: 400;
+}
+
+.intro {
+    max-width: 600px;
+    margin: 0 auto;
+    color: var(--tinta-suave);
+    font-size: 1.1rem;
+}
+
+.intro code,
+.seccion-header code {
+    font-family: var(--mono);
+    font-size: 0.85em;
+    background-color: var(--tinta);
+    color: var(--fondo);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+
+/* ============== CONTENIDO ============== */
+.contenido {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.seccion {
+    margin-bottom: 5rem;
+    padding-bottom: 5rem;
+    border-bottom: 1px solid var(--borde);
+}
+
+.seccion:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.seccion-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.numero {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--acento);
+    background-color: var(--acento-suave);
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    flex-shrink: 0;
+    margin-top: 0.4rem;
+}
+
+.seccion-header h2 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
+}
+
+.seccion-header p {
+    color: var(--tinta-suave);
+    font-size: 1rem;
+    max-width: 600px;
+}
+
+
+/* ============== GRID DE DEMOSTRACIONES ============== */
+.grid-demos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.grid-demos.dos-cols {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 700px) {
+    .grid-demos {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ============== TARJETA DE DEMO ============== */
+.demo {
+    background-color: var(--superficie);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    padding: 1.25rem;
+    transition: all 0.2s ease;
+}
+
+.demo:hover {
+    border-color: var(--tinta);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px -16px rgba(0,0,0,0.15);
+}
+
+.demo-label {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--tinta);
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px dashed var(--borde);
+}
+
+.demo-label .default {
+    color: var(--tinta-suave);
+    font-weight: 400;
+    font-size: 0.75rem;
+}
+
+
+/* ============== CONTENEDOR FLEX (las cajas) ============== */
+.demo-flex {
+    display: flex;
+    gap: 0.5rem;
+    background-color: var(--fondo);
+    background-image: 
+        repeating-linear-gradient(45deg, transparent, transparent 8px, rgba(0,0,0,0.025) 8px, rgba(0,0,0,0.025) 9px);
+    border-radius: 8px;
+    padding: 1rem;
+    min-height: 80px;
+}
+
+.demo-flex.alto {
+    min-height: 180px;
+}
+
+
+/* ============== CAJAS NUMERADAS ============== */
+.caja {
+    width: 60px;
+    height: 50px;
+    background-color: var(--tinta);
+    color: var(--fondo);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    font-family: var(--mono);
+    font-weight: 600;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.caja:nth-child(1) { background-color: var(--tinta); }
+.caja:nth-child(2) { background-color: var(--acento); }
+.caja:nth-child(3) { background-color: var(--azul); }
+.caja:nth-child(4) { background-color: var(--tinta); }
+.caja:nth-child(5) { background-color: var(--acento); }
+.caja:nth-child(6) { background-color: var(--azul); }
+
+.caja.sin-alto {
+    height: auto;
+    min-height: 40px;
+}
+
+
+/* ============== EJEMPLO PRÁCTICO: NAVBAR ============== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--superficie);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.logo {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
+    font-size: 1.25rem;
+    color: var(--tinta);
+}
+
+.logo::first-letter {
+    color: var(--acento);
+}
+
+.menu {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.menu a {
+    color: var(--tinta-suave);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.menu a:hover {
+    color: var(--acento);
+}
+
+.btn-nav {
+    background-color: var(--tinta);
+    color: var(--fondo);
+    border: none;
+    padding: 0.6rem 1.25rem;
+    border-radius: 8px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-nav:hover {
+    background-color: var(--acento);
+}
+
+@media (max-width: 600px) {
+    .navbar { flex-direction: column; gap: 1rem; align-items: stretch; text-align: center; }
+    .menu { justify-content: center; flex-wrap: wrap; gap: 1rem; }
+}
+
+
+/* ============== BLOQUE DE CÓDIGO ============== */
+.codigo {
+    background-color: var(--tinta);
+    border-radius: 12px;
+    padding: 1.5rem;
+    overflow-x: auto;
+}
+
+.codigo pre {
+    font-family: var(--mono);
+    font-size: 0.9rem;
+    color: var(--fondo);
+    line-height: 1.7;
+}
+
+.c-prop { color: #FFB86C; }
+.c-key  { color: #8BE9FD; }
+.c-val  { color: #50FA7B; }
+
+
+/* ============== PIE ============== */
+.pie {
+    text-align: center;
+    padding: 3rem 2rem;
+    border-top: 1px solid var(--borde);
+    color: var(--tinta-suave);
+    font-size: 0.85rem;
+    font-family: var(--mono);
+    letter-spacing: 0.05em;
+}

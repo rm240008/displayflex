@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Visual de Flexbox</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ============== CABECERA ============== -->
+    <header class="cabecera">
+        <span class="kicker">CSS · Layout</span>
+        <h1>Guía Visual de <span class="resaltado">Flexbox</span></h1>
+        <p class="intro">
+            <code>display: flex</code> convierte a un elemento en un contenedor flexible 
+            que organiza a sus hijos en filas o columnas con alineación precisa.
+        </p>
+    </header>
+
+    <main class="contenido">
+
+        <!-- ============== JUSTIFY-CONTENT ============== -->
+        <section class="seccion">
+            <div class="seccion-header">
+                <span class="numero">01</span>
+                <div>
+                    <h2>justify-content</h2>
+                    <p>Alinea los elementos en el eje principal (horizontal por defecto).</p>
+                </div>
+            </div>
+
+            <div class="grid-demos">
+
+                <div class="demo">
+                    <div class="demo-label">flex-start</div>
+                    <div class="demo-flex" style="justify-content: flex-start;">
+                        <div class="caja">1</div>
+                        <div class="caja">2</div>
+                        <div class="caja">3</div>
+                    </div>
+                </div>
+
+                <div class="demo">
+                    <div class="demo-label">center</div>
+                    <div class="demo-flex" style="justify-content: center;">
+                        <div class="caja">1</div>
+                        <div class="caja">2</div>
+                        <div class="caja">3</div>
+                    </div>
+                </div>
+
+                <div class="demo">
+                    <div class="demo-label">space-between</div>
+                    <div class="demo-flex" style="justify-content: space-between;">
+                        <div class="caja">1</div>
+                        <div class="caja">2</div>
+                        <div class="caja">3</div>
+                    </div>
+                </div>
+
+                <div class="demo">
+                    <div class="demo-label">space-around</div>
+                    <div class="demo-flex" style="justify-content: space-around;">
+                        <div class="caja">1</div>
+                        <div class="caja">2</div>
+                        <div class="caja">3</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ============== ALIGN-ITEMS ============== -->
+        <section class="seccion">
+            <div class="seccion-header">
+                <span class="numero">02</span>
+                <div>
+                    <h2>align-items</h2>
+                    <p>Alinea los elementos en el eje secundario (vertical por defecto).</p>
+                </div>
+            </div>
+
+            <div class="grid-demos">
+
+                <div class="demo">
+                    <div class="demo-label">flex-start</div>
+                    <div class="demo-flex alto" style="align-items: flex-start;">
+                        <div class="caja">1</div>
+                        <div class="caja">2</div>
+                        <div class="caja">3</div>
+                    </div>
+                </div>
+
+                <div class="demo">
+                    <div class="demo-label">center</div>
+                    <div class="demo-flex alto" style="align-items: center;">
+                        <div class="caja">1</div>
+                        <div class="caja">2</div>
+                        <div class="caja">3</div>
+                    </div>
+                </div>
+
+                <div class="demo">
+                    <div class="demo-label">flex-end</div>
+                    <div class="demo-flex alto" style="align-items: flex-end;">
+                        <div class="caja">1</div>
+                        <div class="caja">2</div>
+                        <div class="caja">3</div>
+                    </div>
+                </div>
+
+                <div class="demo">
+                    <div class="demo-label">stretch</div>
+                    <div class="demo-flex alto" style="align-items: stretch;">
+                        <div class="caja sin-alto">1</div>
+                        <div class="caja sin-alto">2</div>
+                        <div class="caja sin-alto">3</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ============== FLEX-DIRECTION ============== -->
+        <section class="seccion">
+            <div class="seccion-header">
+                <span class="numero">03</span>
+                <div>
+                    <h2>flex-direction</h2>
+                    <p>Define la dirección en la que se ordenan los elementos.</p>
+                </div>
+            </div>
+
+            <div class="grid-demos dos-cols">
+
+                <div class="demo">
+                    <div class="demo-label">row <span class="default">(por defecto)</span></div>
+                    <div class="demo-flex" style="flex-direction: row;">
+                        <div class="caja">1</div>
+                        <div class="caja">2</div>
+                        <div class="caja">3</div>
+                    </div>
+                </div>
+
+                <div class="demo">
+                    <div class="demo-label">column</div>
+                    <div class="demo-flex alto" style="flex-direction: column;">
+                        <div class="caja">1</div>
+                        <div class="caja">2</div>
+                        <div class="caja">3</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ============== FLEX-WRAP ============== -->
+        <section class="seccion">
+            <div class="seccion-header">
+                <span class="numero">04</span>
+                <div>
+                    <h2>flex-wrap</h2>
+                    <p>Permite que los elementos pasen a una nueva línea cuando no caben.</p>
+                </div>
+            </div>
+
+            <div class="grid-demos dos-cols">
+
+                <div class="demo">
+                    <div class="demo-label">nowrap <span class="default">(por defecto)</span></div>
+                    <div class="demo-flex" style="flex-wrap: nowrap;">
+                        <div class="caja">1</div>
+                        <div class="caja">2</div>
+                        <div class="caja">3</div>
+                        <div class="caja">4</div>
+                        <div class="caja">5</div>
+                        <div class="caja">6</div>
+                    </div>
+                </div>
+
+                <div class="demo">
+                    <div class="demo-label">wrap</div>
+                    <div class="demo-flex" style="flex-wrap: wrap;">
+                        <div class="caja">1</div>
+                        <div class="caja">2</div>
+                        <div class="caja">3</div>
+                        <div class="caja">4</div>
+                        <div class="caja">5</div>
+                        <div class="caja">6</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ============== EJEMPLO PRÁCTICO ============== -->
+        <section class="seccion">
+            <div class="seccion-header">
+                <span class="numero">05</span>
+                <div>
+                    <h2>Ejemplo práctico: Barra de navegación</h2>
+                    <p>Combinando <code>justify-content: space-between</code> y <code>align-items: center</code>.</p>
+                </div>
+            </div>
+
+            <nav class="navbar">
+                <div class="logo">◆ MiSitio</div>
+                <ul class="menu">
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+                <button class="btn-nav">Iniciar sesión</button>
+            </nav>
+
+            <div class="codigo">
+<pre><span class="c-prop">.navbar</span> {
+    <span class="c-key">display</span>: <span class="c-val">flex</span>;
+    <span class="c-key">justify-content</span>: <span class="c-val">space-between</span>;
+    <span class="c-key">align-items</span>: <span class="c-val">center</span>;
+}</pre>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="pie">
+        <p>Demostración de Flexbox · CSS Layout</p>
+    </footer>
+
+</body>
+</html>
